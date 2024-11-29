@@ -21,6 +21,8 @@ The instruction tuning process follows these steps:
 3. **Training Parameters**: Fine-tuning is performed with the following setup:
    - **Platform**: Kaggle (for initial 3 epochs, taking 5 hours)
    - **Alternative Platform**: Param-Karmapa (for 5 epochs, taking 3 hours)
+### Outline of Project 
+![outline](outline.jpg)
 
 ## Results
 
