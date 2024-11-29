@@ -57,7 +57,7 @@ class LightningModel(pl.LightningModule):
         self.model = AutoModelForSeq2SeqLM.from_pretrained(self.hparams.model_name_or_path)
         
         if self.hparams.use_lora:
-            ]
+        
             peft_config = LoraConfig(
                 task_type=TaskType.SEQ_2_SEQ_LM,
                 inference_mode=False,
