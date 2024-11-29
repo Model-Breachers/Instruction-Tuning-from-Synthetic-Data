@@ -55,6 +55,17 @@ class LightningModel(pl.LightningModule):
         self.save_hyperparameters(hparams)
         print(self.hparams)
         self.model = AutoModelForSeq2SeqLM.from_pretrained(self.hparams.model_name_or_path)
+        
+        if self.hparams.use_lora:
+            ]
+            peft_config = LoraConfig(
+                task_type=TaskType.SEQ_2_SEQ_LM,
+                inference_mode=False,
+                r=8,
+                lora_alpha=32,
+                lora_dropout=0.1,
+            )
+            self.model = get_peft_model(self.model, peft_config)
         self.tokenizer = AutoTokenizer.from_pretrained(self.hparams.model_name_or_path)
 
     def forward(
